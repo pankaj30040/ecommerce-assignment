@@ -1,0 +1,90 @@
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #fff;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    position: fixed;
+    left: 0;
+  }
+  
+  .filter-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .filter-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .filter-section {
+    margin-bottom: 20px;
+  }
+  
+  .filter-heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  .filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .filter-checkbox {
+    margin-right: 10px;
+    accent-color: #ff7b00; /* Flipkart orange */
+  }
+  
+  .price-slider {
+    width: 100%;
+    margin: 10px 0;
+  }
+  
+  .price-display {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .reset-button {
+    background-color: #ff7b00;
+    border: none;
+    color: white;
+    padding: 12px 0;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .reset-button:hover {
+    background-color: #ff5500;
+  }
+  
+  /* Responsive layout */
+  @media (max-width: 768px) {
+    .sidebar {
+      width: 220px;
+      padding: 15px;
+    }
+  
+    .filter-card {
+      padding: 12px;
+    }
+  
+    .filter-title {
+      font-size: 1.2rem;
+    }
+  }
+  

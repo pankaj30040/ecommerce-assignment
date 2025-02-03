@@ -1,0 +1,43 @@
+<div class="cart-container">
+    <h2 class="cart-title">My Cart ({{ cartCount }} items)</h2>
+  
+    <!-- Cart Left Section (Items) -->
+    <div class="cart-content">
+      <div class="cart-items">
+        <div *ngFor="let item of cartItems" class="cart-item">
+          
+          <!-- Product Image -->
+          <img [src]="item.images[0]" alt="{{ item.title }}" class="cart-item-image" />
+  
+          <!-- Product Details -->
+          <div class="cart-item-details">
+            <h3 class="product-title">{{ item.title }}</h3>
+            <p class="product-price">₹{{ item.price }}</p>
+  
+            <!-- Quantity Selector -->
+            <div class="quantity-control">
+              <button (click)="decreaseQuantity(item)">−</button>
+              <span>{{ item.quantity }}</span>
+              <button (click)="increaseQuantity(item)">+</button>
+            </div>
+  
+            <!-- Remove Button -->
+            <button class="remove-btn" (click)="removeItem(item)">Remove</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Cart Right Section (Summary) -->
+      <div class="cart-summary">
+        <h3>Price Details</h3>
+        <hr />
+        <p>Total Items: <strong>{{ cartCount }}</strong></p>
+        <!-- <p>Total Price: <strong>₹{{ getTotalPrice() }}</strong></p> -->
+        <button class="checkout-btn">Checkout</button>
+      </div>
+    </div>
+  
+    <!-- Clear Cart Button -->
+    <button class="clear-cart-btn" (click)="clearCart()" *ngIf="cartItems.length > 0">Clear Cart</button>
+  </div>
+  

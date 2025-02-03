@@ -1,0 +1,28 @@
+
+   <nav class="top-menu">
+    <div class="logo">Pankaj Udas</div>
+    <div class="menu-links">
+      <a routerLink="/" routerLinkActive="active">Home</a>
+      <a routerLink="/products" routerLinkActive="active">Products</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    </div>
+    <div class="user-actions">
+        <div class="profile-dropdown">
+          <button class="profile-button">
+            <span class="profile-icon">👤</span> User
+            <span class="dropdown-icon">▼</span>
+          </button>
+          <div class="dropdown-content">
+            <a routerLink="/profile">Profile</a>
+            <a routerLink="/orders">Orders</a>
+            <a >Logout</a>
+          </div>
+        </div>
+        <div class="cart-icon" (click)="navigateToCart()">
+            🛒 <span class="cart-count">{{ cartCount }}</span>
+          </div>
+      </div>
+  </nav>
+  
+  

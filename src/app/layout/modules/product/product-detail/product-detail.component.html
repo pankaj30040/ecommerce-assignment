@@ -1,0 +1,42 @@
+<div class="product-detail-container">
+    <!-- Left: Image Gallery -->
+    <div class="image-gallery">
+      <div class="main-image-container">
+        <button class="nav-btn left" (click)="prevImage()">&#10094;</button>
+        <img [src]="product.images[currentImageIndex]" class="main-image" alt="{{ product.title }}" />
+        <button class="nav-btn right" (click)="nextImage()">&#10095;</button>
+      </div>
+  
+      <!-- Thumbnails -->
+      <div class="thumbnail-container">
+        <img 
+          *ngFor="let img of product.images; let i = index" 
+          [src]="img" 
+          [class.active]="i === currentImageIndex" 
+          (click)="setImage(i)" 
+          class="thumbnail"
+          alt="Product Image"
+        />
+      </div>
+    </div>
+  
+    <!-- Right: Product Details -->
+    <div class="product-info">
+      <h1 class="product-title">{{ product.title }}</h1>
+      <p class="category">Category: <strong>{{ product.category.name }}</strong></p>
+  
+      <div class="pricing-section">
+        <span class="discount-price">₹{{ product.price - (product.price * 0.15) | number }}</span>
+        <span class="original-price">₹{{ product.price }}</span>
+        <span class="discount">15% OFF</span>
+      </div>
+  
+      <p class="description">{{ product.description }}</p>
+  
+      <div class="buttons">
+        <button class="buy-now">Buy Now</button>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+  

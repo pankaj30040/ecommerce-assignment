@@ -1,0 +1,26 @@
+<aside class="sidebar">
+    <div class="filter-card">
+      <h3 class="filter-title">Filter Products</h3>
+      
+      <!-- Category Filter -->
+      <div class="filter-section">
+        <h4 class="filter-heading">Category</h4>
+        <div class="filter-options">
+          <div *ngFor="let category of categories">
+            <input type="checkbox" [value]="category.id" (change)="onFilterChange()" [(ngModel)]="selectedCategories" class="filter-checkbox">
+            <label>{{ category.name }}</label>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Price Range Filter -->
+      <div class="filter-section">
+        <h4 class="filter-heading">Price Range</h4>
+        <input type="range" min="0" max="1000" [(ngModel)]="priceRange" (change)="onFilterChange()" class="price-slider">
+        <p class="price-display">Up to: ₹{{ priceRange }}</p>
+      </div>
+  
+      <button (click)="resetFilters()" class="reset-button">Reset Filters</button>
+    </div>
+  </aside>
+  

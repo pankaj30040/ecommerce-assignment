@@ -1,0 +1,62 @@
+<div class="modal-header">
+    <h4 class="modal-title">
+      {{ productData ? 'Edit Product' : 'Add New Product' }}
+    </h4>
+    <button type="button" class="close" (click)="activeModal.dismiss()">×</button>
+  </div>
+  
+  <div class="modal-body">
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="product-form">
+      
+      <!-- Title -->
+      <div class="form-group">
+        <label><i class="fas fa-tag"></i> Title</label>
+        <input type="text" class="form-control" formControlName="title" placeholder="Enter title" />
+      </div>
+  
+      <!-- Price -->
+      <div class="form-group">
+        <label><i class="fas fa-dollar-sign"></i> Price</label>
+        <input type="number" class="form-control" formControlName="price" placeholder="Enter price" />
+      </div>
+  
+      <!-- Description -->
+      <div class="form-group">
+        <label><i class="fas fa-align-left"></i> Description</label>
+        <textarea class="form-control" formControlName="description" placeholder="Enter description"></textarea>
+      </div>
+  
+      <!-- Category -->
+      <div class="form-group">
+        <label><i class="fas fa-list"></i> Category</label>
+        <select class="form-control" formControlName="categoryId">
+          <option *ngFor="let category of categories" [value]="category.id">
+            {{ category.name }}
+          </option>
+        </select>
+      </div>
+  
+      <!-- Image Upload -->
+      <div class="form-group">
+        <label><i class="fas fa-image"></i> Upload Images</label>
+        <input type="file" multiple class="form-control file-input" (change)="onImageChange($event)" />
+      </div>
+  
+      <!-- Image Previews -->
+      <div class="image-preview-container">
+        <div *ngFor="let img of imagePreviews; let i = index" class="image-preview">
+          <img [src]="img" alt="Preview" />
+          <button type="button" class="remove-image" (click)="removeImage(i)">×</button>
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary submit-btn" [disabled]="productForm.invalid">
+          {{ productData ? 'Update Product' : 'Add Product' }}
+        </button>
+      </div>
+  
+    </form>
+  </div>
+  

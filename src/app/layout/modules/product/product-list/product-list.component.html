@@ -1,0 +1,41 @@
+<div class="product-list-container">
+  <!-- Add New Product Button -->
+  <div class="add-product-container">
+    <button class="add-product-btn" (click)="openProductModal()">+ Add New Product</button>
+  </div>
+
+  <div class="product-list-card">
+    <div class="product-list-card-body">
+      <div class="product-list">
+        <div class="product-card" *ngFor="let product of productList">
+          <div class="card" (click)="onProductClick(product.id)">
+            <!-- Product Image -->
+            <div class="product-image-container">
+              <img [src]="product.images[0]" alt="{{ product.name }}" class="product-image" />
+            </div>
+
+            <!-- Product Details -->
+            <div class="card-body">
+              <h2 class="product-title">{{ product.title }}</h2>
+              <p class="product-category">Category: <strong>{{ product.category.name }}</strong></p>
+
+              <!-- Description with Tooltip -->
+              <p class="product-description" [attr.title]="product.description">
+                {{ product.description | slice:0:60 }}...
+              </p>
+
+              <div class="product-price-rating">
+                <span class="product-price">${{ product.price }}</span>
+              </div>
+            </div>
+
+            <!-- Add to Cart Button -->
+            <div class="card-footer">
+              <button class="add-to-cart" (click)="addToCart(product)">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

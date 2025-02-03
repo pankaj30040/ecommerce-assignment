@@ -1,0 +1,89 @@
+/* Full-Screen Background */
+.login-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('https://source.unsplash.com/random/1920x1080/?shopping,ecommerce') no-repeat center center/cover;
+  }
+  
+  /* Login Container */
+  .login-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    width: 350px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Website Title */
+  .website-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  /* Login Form */
+  h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Error Messages */
+  .error-message {
+    color: red;
+    font-size: 12px;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    width: 100%;
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background: #0056b3;
+  }
+  
+  .btn-outline-secondary {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    background: transparent;
+    color: #007bff;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .btn-outline-secondary:hover {
+    background: #007bff;
+    color: white;
+  }
+  
+  /* Modal Styling */
+  .modal-body {
+    padding: 20px;
+  }
+  
